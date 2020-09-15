@@ -7224,6 +7224,7 @@ func TestDefaultApiService_UpdatePullRequestSettings(t *testing.T) {
 	type args struct {
 		projectKey     string
 		repositorySlug string
+		localVarPostBody interface{}
 	}
 	tests := []struct {
 		name                     string
@@ -7242,7 +7243,7 @@ func TestDefaultApiService_UpdatePullRequestSettings(t *testing.T) {
 			a := &DefaultApiService{
 				client: tt.fields.client,
 			}
-			got, err := a.UpdatePullRequestSettings(tt.args.projectKey, tt.args.repositorySlug)
+			got, err := a.UpdatePullRequestSettings(tt.args.projectKey, tt.args.repositorySlug, tt.args.localVarPostBody)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("DefaultApiService.UpdatePullRequestSettings() error = %v, wantErr %v", err, tt.wantErr)
 				return
